@@ -4,6 +4,7 @@ const closeButton = document.querySelector(".close-button");
 const cookieBanner = document.getElementById("cookie-banner");
 const acceptCookies = document.getElementById("accept-cookies");
 const rejectCookies = document.getElementById("reject-cookies");
+const sectionGoogle = document.querySelector(".section-google");
 
 faqLinks.forEach((faq) => {
   faq.addEventListener("click", () => {
@@ -15,6 +16,13 @@ faqLinks.forEach((faq) => {
 closeButton.addEventListener("click", () => {
   gsap.to(overlay, { duration: 0.5, display: "none", opacity: 0 });
   gsap.to(document.body, { overflow: "auto" });
+});
+
+sectionGoogle.addEventListener("click", function () {
+  window.open(
+    "https://www.google.com/search?sca_esv=eba07bfb50991dad&q=Wow-Deck&stick=H4sIAAAAAAAAAONgU1I1qDBLNLAwMEozNbUwtjBNTLO0MqiwsExKTTVJTUsxSUwxSDNNWsTKEZ5fruuSmpwNACxn3Y00AAAA&mat=CfyWlTClQ8NH&ved=2ahUKEwi_0KyRkIuLAxULQkEAHavjNf4QrMcEegQIKBAC",
+    "_blank"
+  );
 });
 
 let question = document.querySelectorAll(".question");
