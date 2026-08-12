@@ -1,0 +1,94 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FaqItem[] = [
+  {
+    question: "What is Wow Deck?",
+    answer:
+      "Wow Deck is a specialised company dedicated to revolutionising presentations, training, and transformation development through comprehensive consultancy services.<br><br>Our team brings together diverse expertise in sales enablement, instructional design, graphic and motion design, visual storytelling, project management, and creative innovation. With this unique blend of skills and experience, we are committed to helping you achieve your business objectives by transforming your communication materials into impactful experiences that captivate audiences and drive meaningful action.",
+  },
+  {
+    question: "What benefits can I expect from using Wow Deck?",
+    answer:
+      "Using Wow Deck offers a multitude of benefits, including:<br><br><strong>Increased Effectiveness and Efficiency:</strong> Solve problems more efficiently with our expertly designed tools and strategies.<br><strong>Elevated Audience Experience:</strong> Captivate your audience with engaging presentations and clear, actionable messages.<br><strong>Differentiation in Appearance and Message:</strong> Stand out with unique, professionally crafted materials that differentiate your brand.<br><strong>Boosted Confidence:</strong> Deliver impactful content with confidence, knowing you have the best tools and training.<br><strong>Improved Internal Alignment:</strong> Enhance collaboration and alignment among team members through clear and effective communication.<br><strong>Quick Wins with High ROI:</strong> Achieve quick, tangible results that offer a high return on investment.<br><strong>Enhanced Brand Image and Trust:</strong> Strengthen your brand image and build greater trust with your audience through consistent, high-quality communication.",
+  },
+  {
+    question: "Can I customize Wow Deck to suit my brand and specific needs?",
+    answer:
+      "Yes, Wow Deck presentations, training programs, and consultancy services are highly customisable to match your brand identity and meet your specific objectives. We work closely with you to understand your unique needs and tailor our solutions accordingly, ensuring they align perfectly with your goals and brand.",
+  },
+  {
+    question: "Who typically uses Wow Deck?",
+    answer:
+      "<strong>Sales Teams:</strong> Seeking to enhance their presentation effectiveness and close more deals.<br><strong>Marketing Departments:</strong> Looking to create unique pitch decks and product launch presentations.<br><strong>Training and Development Teams:</strong> Aiming to deliver impactful face-to-face and e-learning programs.<br><strong>Transformation Leaders:</strong> Needing to communicate strategic initiatives and drive change.<br><strong>Executives and Leadership Teams:</strong> Wanting to convey clear and powerful messages to stakeholders.<br><br>Our tailored solutions cater to any team or individual tasked with communication, training, or transformation, helping them achieve their business objectives through innovative and effective presentations and training programs.",
+  },
+  {
+    question: "What happens after the initial implementation of Wow Deck?",
+    answer:
+      "After the initial implementation, Wow Deck continues to be a valuable asset for your organisation. We offer:<br><br><strong>Ongoing Support:</strong> Continuous updates and enhancements to keep your presentations, training programs, and transformation tools current and effective.<br><strong>Training for New Team Members:</strong> Regular training sessions to ensure new team members are proficient in using Wow Deck's tools and resources.<br><strong>Continuous Improvement:</strong> Ongoing evaluation and refinement of our solutions to align with your evolving business objectives and industry trends.<br><strong>Customer Success Management:</strong> Dedicated support to address any questions or needs, ensuring you maximize the benefits of our services.<br><strong>Feedback Loop:</strong> We actively seek and incorporate your feedback to make sure our services are meeting your needs and driving your success.<br><br>By partnering with Wow Deck, you ensure that your communication and training strategies remain dynamic, effective, and aligned with your business goals.",
+  },
+  {
+    question: "Can a PowerPoint (or Keynote) presentation be called a software product?",
+    answer:
+      "In most cases, a PowerPoint presentation isn't seen as typical software. Instead, it's a digital file for sharing information.<br><br>However, in Wow Deck, we create unique and customised PowerPoint/Keynote files with advanced features.<br><br>This makes them more like specialized software due to enhanced functionality, non-linear navigation, multimedia elements, and dynamic design, going beyond standard presentations, making it closer to what one might traditionally consider a software product.",
+  },
+  {
+    question: "How does Wow Deck differ from traditional presentations?",
+    answer:
+      "Wow Deck's presentations are non-linear and designed for engaging, back-and-forth conversations, which departs from traditional presentations' linear structure.<br><br>It places a strong emphasis on delivering a clear \"What's in it for me?\" message to the audience. This audience-centric approach differs from traditional presentations that might focus more on the company's achievements and features.<br><br>We stand out by moving away from the ineffective and clone-like status quo of presentations, even more for sales decks. This implies innovation and a departure from the typical, delivering something fresh and unique.",
+  },
+  {
+    question: "What is the process of creating a Wow Deck presentation?",
+    answer:
+      "The process involves four phases: Messaging, Design, Implementation, and Optimization.<br><br>It begins with collaboratively crafting compelling core messaging, followed by creating visually stunning designs. Implementation includes training users (e.g., sales teams), and Optimization focuses on updates and ongoing improvements.",
+  },
+  {
+    question: "What types of multimedia resources are included in Wow Deck presentations?",
+    answer:
+      "Wow Deck presentations incorporate multimedia elements such as videos, animations, dynamic transitions, GIFs, and hyperlinks to external resources. These elements serve to enhance engagement, support the storyline, and contribute to an overall captivating and interactive experience.<br><br>Miro board are used for highly interactive activities.",
+  },
+  {
+    question: "How long does it take to implement Wow Deck for our sales team?",
+    answer:
+      "The timeline can vary based on the complexity of your requirements. However, our team ensures a streamlined onboarding process to get you up and running as quickly as possible.<br><br>Generally, 4 – 6 weeks.",
+  },
+  {
+    question: "How can I get started with Wow Deck for my organization?",
+    answer:
+      "To get started, simply reach out to our team, and we'll discuss your specific needs, provide a customised solution, and guide you through the onboarding process.",
+  },
+  {
+    question: "Is training provided for our sales team on how to use Wow Deck effectively?",
+    answer:
+      "Wow Deck takes your team's success seriously. We provide comprehensive training and support to ensure a smooth transition. Our onboarding includes training sessions, coaching, and access to resources.<br><br>Moreover, our support team is available to assist with any questions or issues you may encounter during your journey with Wow Deck.",
+  },
+];
+---
+
+<div class="overlay" data-faq-overlay>
+  <div class="content">
+    <div class="headercopy">
+      <button class="close-button" data-close-faq>
+        <img class="svgmenu" src="/images/cancelcopy.svg" alt="Cancel" />
+      </button>
+    </div>
+    <section class="sectiongridfaq">
+      <h1 style="margin-bottom: 1.2rem">FAQs</h1>
+      <div class="wrapper">
+        {faqs.map((faq) => (
+          <div class="container12">
+            <h3 class="question">
+              <p style="width: 90%">{faq.question}</p>
+            </h3>
+            <div class="answercont">
+              <p class="answer" set:html={faq.answer}></p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</div>

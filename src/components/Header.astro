@@ -1,0 +1,44 @@
+---
+const navLinks = [
+  { label: "Strategy Boost Quiz", href: "https://luis-2frx6eng.scoreapp.com", external: true },
+  { label: "15 Min meeting", href: "https://outlook.office.com/bookwithme/user/3f6f421fac5f4f3a99e3c43d82d789fe@wow-deck.com?anonymous&ep=plink", external: true },
+  { label: "About us", href: "#AboutUS" },
+  { label: "Contact us", href: "#Contactus" },
+  { label: "FAQ", href: "#faq", id: "faq" },
+];
+---
+
+<header>
+  <img src="/images/Logo-height640.png" alt="Wow Deck logo" class="image-4" width="454" height="480" />
+  <nav>
+    <ul class="navlinks">
+      {navLinks.map((link) => (
+        <li class="items">
+          <a href={link.href} target={link.external ? "_blank" : undefined} id={link.id}>
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <button class="icon-btn" data-open-sidebar aria-label="Open menu">
+          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"/></svg>
+        </button>
+      </li>
+    </ul>
+
+    <ul class="sidebar" data-sidebar>
+      <li>
+        <button class="icon-btn" data-close-sidebar aria-label="Close menu">
+          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+        </button>
+      </li>
+      {navLinks.map((link) => (
+        <li class="items" data-close-sidebar>
+          <a href={link.href} target={link.external ? "_blank" : undefined} id={link.id}>
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
